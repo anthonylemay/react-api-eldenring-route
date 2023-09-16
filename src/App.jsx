@@ -9,7 +9,12 @@ function App() {
   return (
     
     <QueryClientProvider client={queryClient}>
-      <Creatures />
+            <Routes>
+          <Route index element={<Creatures/>} />
+          <Route path="/category/:categoryName" element={<Category />}/>
+          <Route path="/category/:categoryName/:mealId" element={<Meal />} />
+      </Routes>
+
     </QueryClientProvider>
   )
 }
